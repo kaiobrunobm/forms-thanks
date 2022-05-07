@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    
+        --color-bg: #ffffff;
+        --header-bg: #ffffff;
+        --resume-border-color: #ADADAD;
+        --resume-bg: #e6e6e6;
+        --color-text: #000000;
+        --white-text: #818181;
+        --primary-color: #100BD4;
+        --primary-color-hover:#0e0bd4c7;
+        --color-box-shadow: #9b9b9b70;
+        --color-border : #00000059;
+        --hover-primary-bg:#ece6e6;
+    
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* -------------------------------NAVBAR----------------------------------- */
+
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    background: var(--color-bg);
+    overflow-x: hidden;
+    transition: .8s;
+    height: 100vh;
+}
+
+.change-theme {
+    position: absolute;
+    top: 115px;
+    right: 20px;
+    font-size: 5rem;
+    cursor: pointer;
+    transition: .3s;
+    color: var(--color-text);
+}
+
+.change-theme:hover {
+    color: var(--primary-color-hover);
+    transition: .3s;
+}
+
+.multi-language{
+    position: absolute;
+    top: 115px;
+    right: 90px;
+}
+
+.language-selected {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.language-selected:before {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-image: url(https://cdn.countryflags.com/thumbs/united-states-of-america/flag-round-250.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* margin-top: 10px; */
+    margin-right: 10px;
+}
+
+.language-selected.change-en:before{
+    background-image: url(https://cdn.countryflags.com/thumbs/united-states-of-america/flag-round-250.png);
+}
+
+.language-selected.change-br:before {
+    background-image: url(https://cdn.countryflags.com/thumbs/brazil/flag-round-250.png);
+}
+
+
+.multi-language ul {
+    position: absolute;
+    width: 70px;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.5);
+    border-radius:10px;
+    padding-top: 10px;
+    display: none;
+}
+
+.multi-language ul li {
+    list-style: none;
+}
+
+.multi-language ul li:hover {
+    background-color: var(--hover-primary-bg);
+    border-radius:10px;
+}
+
+.multi-language ul li a {
+    display: block;
+    color: #252525;
+    padding: 5px 10px;
+}
+
+.multi-language ul li a:before {
+    content: "";
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+a.en:before{
+    background-image: url(https://cdn.countryflags.com/thumbs/united-states-of-america/flag-round-250.png);
+}
+
+a.br:before{
+    background-image: url(https://cdn.countryflags.com/thumbs/brazil/flag-round-250.png);
+}
+
+.multi-language:hover ul {
+    display: block
+}
+
+
+
+/* DARK THEME COLORS */
+body.dark-theme {
+    --hue: -174;
+    --sat: -63%;
+
+    --color-bg: #02030B;
+    --header-bg : #02030B;
+    --resume-bg: #0c0e20;
+    --color-text: #96a4cc;
+    --white-text: #2b2b2b;
+    --primary-color: #04D0F5;
+    --primary-color-hover: #03bcdd;
+    --color-box-shadow: #161930a8;
+    --color-border : #ffffff59;
+    --hover-primary-bg:#444444;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    position: fixed;
+    height: 100px;
+    min-width: 100%;
+    z-index: 12;
+    top: 0px;
+    flex-direction: row;
+    align-items: center;
+    padding: 2.3rem;
+    border-bottom: 1px solid var(--color-border);
+    background-color:var(--header-bg);
+    transition: .8s;
+}
+
+.scroll-header {
+        box-shadow: 0 1px 20px var(--color-box-shadow);
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    font-size: 3.6rem;
+    font-weight: 500;
+    margin-right: 140px;
+}
+
+.logo-big {
+    font-size: clamp(2.5rem, 2.5vw, 3.6rem); 
+    color: var(--color-text);
+    transition: .3s
+}
+
+.logo-big:hover {
+    color: var(--primary-color-hover);
+    font-size: 4rem;
+}
+
+.name-logo {
+    position: relative;
+    top: 20px;
+    left: 5px;
+    font-size: 2rem;
+    color: var(--color-text);
+    font-weight: 300;
+}
+
+/* ----------------------------NAVBAR END------------------------------- */
+
+
+/* ----------------------------HOME SECTION------------------------------- */
+
+.main {
+    height: 80vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+}
+
+.title-thanks {
+    height:20vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column;
+    color: var(--color-text);
+    font-size:clamp(5rem, 10vw, 10rem);
+}
+
+img {
+    margin-top: 100px;
+    width: clamp(5rem, 100vw, 50rem);
+}
+
+.main-text {
+    display: flex;
+    flex-direction: column;
+}
+.thanks-text {
+    display:flex;
+    justify-content: flex-start;
+    text-align: center;
+    font-size:clamp(1rem, 10vw, 2rem);
+    color: var(--color-text);
+}
+
+.social-medias {
+    display:flex;
+    flex-direction: column;
+    position: fixed;
+    padding-left: 2rem;
+    top: 35%;
+    font-size:4rem;
+}
+
+.social-media-itens {
+    color: var(--color-text);
+    transition: .5s;
+}
+.social-media-itens:hover {
+    color: var(--primary-color-hover);
+    font-size: 4.5rem;
+} 
+/* ---------------------------- END OF HOME SECTION------------------------------- */
+
+
+/* ---------------------------- FOOTER SECTION------------------------------- */
+
+
+.footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 5rem;
+    margin-top: 10rem;
+}
+
+.footer-text {
+    display:flex;
+    font-weight: bold;
+    justify-content:space-around;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: var(--color-text);
+    transition: .5s;
+}
+
+.footer-text:hover {
+    color: var(--primary-color-hover);
+    font-size: 2rem;
+}
+
+.footer-social-media {
+    display: none;
+}
+
+/* ---------------------------- END OF FOOTER SECTION------------------------------- */
+
+
+
+
+
+/* ---------------------------- MEDIA QUERY ------------------------------- */
+
+
+@media (max-width:1300px) {
+
+    .name-logo {
+        display: block;
+    }
+
+    .header {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-top: 10rem;
+    }
+
+    img {
+        padding: 0rem 5rem 5rem 5rem;
+    }
+
+    .logo-big {
+        margin-left: 7rem;
+    }
+
+    .change-theme {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+
+    .multi-language{
+        position: absolute;
+        top: 30px;
+        right: 90px;
+    }
+
+    .social-medias {
+        display: none;
+    }
+
+
+    .footer {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-social-media {
+        display: flex;
+        flex-direction: row;
+        margin-right: 2rem;
+        gap: 2rem;
+    }
+
+    .footer-social-media-itens {
+        font-size: 3rem;
+        color: var(--color-text);
+        transition: .5s;
+    }
+
+    .footer-social-media-itens:hover {
+        color: var(--primary-color-hover);
+    }
+}
+
+
+
+
+@media screen and (max-width: 800px) {
+    .name-logo {
+        display: none;
+    }
+}
+
+@media (max-width: 574px) {
+    .logo-big {
+        margin-left: 1rem;
+    }
+
+
+}
